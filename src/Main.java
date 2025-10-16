@@ -13,7 +13,7 @@ public class Main {
 
         do{
             System.out.println("Por favor eliga una de las siguientes opciones:");
-            System.out.println(" 1. Para crear un nuevo libro impreso \n 2. Para crear un nuevo digital\n 3. Mostrar los libros \n 4.Buscar libro por titulo \n 5. Salir");
+            System.out.println(" 1. Para crear un nuevo libro impreso \n 2. Para crear un nuevo digital\n 3. Mostrar los libros \n 4.Buscar libro\n 5.Mostrar libros digitales \n 6.Mostrar libros Impresos \n 7.Buscar libro por titulo \n 8. Salir");
             op = teclado.nextInt();
             switch (op){
                 case 1://crear impreso
@@ -33,22 +33,25 @@ public class Main {
                     for (Libro L: LibroList){
                         if(buscar.equalsIgnoreCase(L.getTitulo())){//equalsIgnoreCase:independiente de qeu el usuario escriva en minusculas o mayusculas pueda buscar el libro
                             System.out.println(L);
-                            System.out.println("Que desea hacer? Digite \n 1.Sacar prestado \n 2. Devolcer libro");
-                            op4= teclado.nextInt();
-                            switch (op4){
-                                case 1:
-
-                                case 2:
-
-                                default:
-                            }
                         }else {
                             System.out.println("El libro no se encontro o no esta bien escrito \n Por favor intentelo de nuevo");
                             break;
                         }
                     }
                     break;
-                case 5:
+                case 5://mostrar digitales
+                    for (Libro L : LibroList){
+                        if (L instanceof LibroDigital){
+                            System.out.println(L);
+                        }
+                    }
+                case 6:// mostrar impresos
+                    for (Libro L : LibroList){
+                        if (L instanceof LibroImpreso){
+                            System.out.println(L);
+                        }
+                    }
+                case 7:
                     System.out.println("Saliendo...");
                     System.out.println("Que tenga buen día ʕ•́ᴥ•̀ʔっ ...");
                     break;
@@ -56,9 +59,10 @@ public class Main {
                     System.out.println("Ingrese una opcion correcta (ㆆ_ㆆ)");
 
             }
-        }while (op != 5);
+        }while (op != 7);
     }
     private static void Libro_Impreso(Scanner teclado, List<Libro>LibroList){
+        int codigo=0;
         teclado.nextLine();
         System.out.println("Escriba el nombre del libro:");
         String Nombre = teclado.nextLine();
@@ -73,12 +77,14 @@ public class Main {
         System.out.println("Peso del libro:");
         double Peso = teclado.nextInt();
 
-        Libro Libro_D= new LibroImpreso(Nombre,Autor,Precio,CantidadE,Disponibilidad,Peso);
-        LibroList.add(Libro_D);
+        codigo++;
+        Libro Libro_Im= new LibroImpreso(Nombre,Autor,Precio,CantidadE,Disponibilidad,codigo,Peso);
+        LibroList.add(Libro_Im);
         System.out.println("--Libro registrado...");
     }
 
     private static void Libro_Digital(Scanner teclado, List<Libro>LibroList) {
+        int codigo=0;
         teclado.nextLine();
         System.out.println("Escriba el nombre del libro:");
         String Nombre = teclado.nextLine();
@@ -93,10 +99,14 @@ public class Main {
         System.out.println("Tamaño del libro:");
         double Tamaño = teclado.nextInt();
 
-        Libro Libro_D= new LibroDigital(Nombre,Autor,Precio,CantidadE,Disponibilidad,Tamaño);
+
+        codigo++;
+        Libro Libro_D= new LibroDigital(Nombre,Autor,Precio,CantidadE,Disponibilidad,codigo,Tamaño);
         LibroList.add(Libro_D);
         System.out.println("--Libro registrado...");
     }
+
+
 
 
 

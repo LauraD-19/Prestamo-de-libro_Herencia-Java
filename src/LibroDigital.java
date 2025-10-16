@@ -4,9 +4,9 @@ public class LibroDigital extends Libro {
     public LibroDigital() {
     }
 
-    public LibroDigital(String titulo, String autor, double precio, int cantidadE, boolean disponibilidad, double tamaño) {
-        super(titulo, autor, precio, cantidadE, disponibilidad);
-        this.Tamaño = tamaño;
+    public LibroDigital(String titulo, String autor, double precio, int cantidadE, boolean disponibilidad, int codigo, double tamaño) {
+        super(titulo, autor, precio, cantidadE, disponibilidad, codigo);
+        Tamaño = tamaño;
     }
 
     public double getTamaño() {
@@ -24,7 +24,7 @@ public class LibroDigital extends Libro {
     }
     @Override
     public String mostrarInfo(){
-        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Tamaño del libro: "+Tamaño;
+        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Código: "+codigo+" --Tamaño del libro: "+Tamaño;
     }
 
 }

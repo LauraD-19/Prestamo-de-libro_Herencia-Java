@@ -4,9 +4,9 @@ public class LibroImpreso extends Libro{
     public LibroImpreso() {
     }
 
-    public LibroImpreso(String titulo, String autor, double precio, int cantidadE, boolean disponibilidad, double peso) {
-        super(titulo, autor, precio, cantidadE, disponibilidad);
-        this.Peso = peso;
+    public LibroImpreso(String titulo, String autor, double precio, int cantidadE, boolean disponibilidad, int codigo, double peso) {
+        super(titulo, autor, precio, cantidadE, disponibilidad, codigo);
+        Peso = peso;
     }
 
     public double getPeso() {
@@ -25,6 +25,6 @@ public class LibroImpreso extends Libro{
     }
     @Override
     public String mostrarInfo(){
-        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Peso del libro: "+Peso;
+        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Código: "+codigo+" --Peso del libro: "+Peso;
     }
 }

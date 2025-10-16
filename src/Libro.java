@@ -4,16 +4,20 @@ public class Libro {
     protected double Precio;
     protected int CantidadE;
     protected boolean Disponibilidad;
+    protected int codigo;
+
+
 
     public Libro() {
     }
 
-    public Libro(String titulo, String autor, double precio, int cantidadE, boolean disponibilidad) {
+    public Libro(String titulo, String autor, double precio, int cantidadE, boolean disponibilidad, int codigo) {
         this.Titulo = titulo;
         this.Autor = autor;
         this.Precio = precio;
         this.CantidadE = cantidadE;
         this.Disponibilidad = disponibilidad;
+        this.codigo = codigo;
     }
 
     public String getTitulo() {
@@ -56,16 +60,15 @@ public class Libro {
         Disponibilidad = disponibilidad;
     }
 
-    @Override
-    public String toString() {
-        return "Titulo='" + Titulo + '\'' +
-                ", Autor='" + Autor + '\'' +
-                ", Precio=" + Precio +
-                ", CantidadE=" + CantidadE +
-                ", Disponibilidad=" + Disponibilidad;
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String mostrarInfo(){
-        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad;
+        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Código: "+codigo;
     }
 }
