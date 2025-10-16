@@ -25,6 +25,6 @@ public class LibroImpreso extends Libro{
     }
     @Override
     public String mostrarInfo(){
-        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Código: "+codigo+" --Peso del libro: "+Peso;
+        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Código lI: "+codigo+" --Peso del libro: "+Peso;
     }
 }

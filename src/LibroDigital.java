@@ -24,7 +24,7 @@ public class LibroDigital extends Libro {
     }
     @Override
     public String mostrarInfo(){
-        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Código: "+codigo+" --Tamaño del libro: "+Tamaño;
+        return "Lista de libros: \n"+" --Titulo: "+Titulo+" --Autor: "+Autor+" -- Precio: "+ Precio+ " --Cantidad de ejemplares: "+CantidadE+" --Disponibilidad: "+Disponibilidad+" --Código LD: "+codigo+" --Tamaño del libro: "+Tamaño;
     }
 
 }
